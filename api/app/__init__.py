@@ -1,0 +1,1 @@
+# DevIntel AI — app package
