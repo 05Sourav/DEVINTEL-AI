@@ -1,4 +1,10 @@
-# DevIntel AI
+# 🧠 DevIntel AI
+
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
+![Qdrant](https://img.shields.io/badge/Qdrant-f9005a?style=flat-square&logo=qdrant)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
 
 > **Engineering Intelligence Platform for Repositories**
 >
@@ -6,7 +12,7 @@
 
 ---
 
-## What It Does
+## 💡 What It Does
 
 DevIntel AI lets developers understand unfamiliar codebases instantly.
 
@@ -17,20 +23,20 @@ DevIntel AI lets developers understand unfamiliar codebases instantly.
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | Next.js 14 (App Router), TypeScript, Tailwind CSS |
-| Backend API | FastAPI (Python), async SQLAlchemy |
-| Database | PostgreSQL |
-| Vector Store | Qdrant |
-| AI | OpenAI (GPT-4o-mini + text-embedding-3-small) or Gemini |
-| Retrieval | Hybrid: semantic + keyword, LLM reranking |
+| Layer        | Technology                                              |
+| ------------ | ------------------------------------------------------- |
+| Frontend     | Next.js 14 (App Router), TypeScript, Tailwind CSS       |
+| Backend API  | FastAPI (Python), async SQLAlchemy                      |
+| Database     | PostgreSQL                                              |
+| Vector Store | Qdrant                                                  |
+| AI           | OpenAI (GPT-4o-mini + text-embedding-3-small) or Gemini |
+| Retrieval    | Hybrid: semantic + keyword, LLM reranking               |
 
 ---
 
-## System Architecture
+## 🏗️ System Architecture
 
 ```
 User → Next.js Frontend
@@ -57,7 +63,7 @@ User → Next.js Frontend
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 ```
 devintel-ai/
@@ -90,7 +96,7 @@ devintel-ai/
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 ### 1. Clone and configure
 
@@ -100,6 +106,7 @@ cd devintel-ai
 ```
 
 Copy env files:
+
 ```bash
 cp api/.env.example api/.env
 cp web/.env.local.example web/.env.local
@@ -137,49 +144,48 @@ Frontend: http://localhost:3000
 
 ---
 
-## API Endpoints
+## 🔌 API Endpoints
 
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/auth/register` | Register user |
-| POST | `/auth/login` | Login → JWT |
-| GET | `/auth/me` | Current user |
-| POST | `/projects/` | Create project |
-| GET | `/projects/` | List projects |
-| POST | `/ingest/repo` | Start ingestion |
-| GET | `/ingest/status/{id}` | Ingestion status |
-| GET | `/ingest/architecture/{id}` | Arch summary |
-| POST | `/chat/` | Create chat |
-| POST | `/chat/ask` | Ask question |
-| GET | `/chat/{id}/messages` | Message history |
+| Method | Endpoint                    | Description      |
+| ------ | --------------------------- | ---------------- |
+| POST   | `/auth/register`            | Register user    |
+| POST   | `/auth/login`               | Login → JWT      |
+| GET    | `/auth/me`                  | Current user     |
+| POST   | `/projects/`                | Create project   |
+| GET    | `/projects/`                | List projects    |
+| POST   | `/ingest/repo`              | Start ingestion  |
+| GET    | `/ingest/status/{id}`       | Ingestion status |
+| GET    | `/ingest/architecture/{id}` | Arch summary     |
+| POST   | `/chat/`                    | Create chat      |
+| POST   | `/chat/ask`                 | Ask question     |
+| GET    | `/chat/{id}/messages`       | Message history  |
 
 ---
 
-## Key Engineering Decisions
+## 🧠 Key Engineering Decisions
 
 ### Why Qdrant?
+
 Fast, production-grade vector database with payload filtering — lets us scope queries per project without complex SQL joins.
 
 ### Why Hybrid Search?
+
 Semantic search finds conceptually relevant code ("how login works"), while keyword search finds exact identifiers (`jwtMiddleware`, `RedisClient`). Combining both increases precision significantly.
 
 ### Why Chunk by Functions?
+
 Functions are the atomic unit of code understanding. Chunking by function boundaries preserves context and prevents irrelevant code bleeding into answers.
 
 ### Why LLM Reranking?
+
 Vector similarity scores don't always reflect true relevance. A second pass with an LLM scorer selects the best 3–5 chunks from the top 10 retrieved.
 
 ### Why File Citations?
+
 Citations ground answers in the actual codebase. This is the key differentiator from generic chatbots — every claim is verifiable.
 
 ---
 
-## Resume Bullet
-
-> Built DevIntel AI, a RAG-powered engineering intelligence platform that indexes GitHub repositories using semantic retrieval, hybrid search, and LLM-based reranking to answer architecture and codebase queries with file-level citations.
-
----
-
-## License
+## 📄 License
 
 MIT
