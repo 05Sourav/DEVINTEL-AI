@@ -1,10 +1,14 @@
+<div align="center">
+
 # 🧠 DevIntel AI
 
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
 ![Qdrant](https://img.shields.io/badge/Qdrant-f9005a?style=flat-square&logo=qdrant)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white)
+
+</div>
 
 > **Engineering Intelligence Platform for Repositories**
 >
